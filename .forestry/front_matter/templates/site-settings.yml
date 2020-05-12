@@ -61,5 +61,11 @@ fields:
     required: true
   label: LinkedIn Username
   description: Your LinkedIn username. Only the username, not the URL.
+- name: github
+  type: text
+  config:
+    required: true
+  label: Github Username
+  description: The username of your GitHub account. <em>Just the username</em>.
 pages:
 - content/site.json
