@@ -6,6 +6,7 @@ import Twitter from "../../assets/twitter.svg"
 import Instagram from "../../assets/instagram.svg"
 import Medium from "../../assets/medium.svg"
 import LinkedIn from "../../assets/linkedin.svg"
+import GitHub from "../../assets/github.svg"
 
 const query = graphql`
   {
@@ -18,6 +19,7 @@ const query = graphql`
         instagram
         linkedin_username
         medium
+        github
         profile_pic {
           childImageSharp {
             fixed(width: 175, height: 175) {
@@ -70,6 +72,7 @@ const Header = () => {
             icon={Twitter}
             href={`https://twitter.com/${results.twitter}`}
           />
+          <Item icon={GitHub} href={`https://github.com/${results.twitter}`} />
           <Item
             icon={LinkedIn}
             href={`https://linkedin.com/in/${results.medium}`}
