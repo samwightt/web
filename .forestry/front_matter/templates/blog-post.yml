@@ -1,4 +1,37 @@
 ---
 label: Blog post
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: The title of the blog post.
+- name: published
+  type: boolean
+  label: Published
+  description: Whether the blog post is published or not.
+- name: has_feature_image
+  type: boolean
+  label: Has Feature Image
+  description: Whether the post should have a feature image or not.
+- name: feature_image
+  type: file
+  config:
+    maxSize: 64
+  label: Feature image
+  description: The feature image that will appear above the content of the blog post.
+  showOnly:
+    field: has_feature_image
+    value: true
+- name: date
+  type: datetime
+  label: Date
+  description: What date the blog post should be published for.
+  config:
+    required: false
+    date_format: ''
+    time_format: 
+    display_utc: false
+  default: now
