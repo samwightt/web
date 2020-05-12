@@ -4,14 +4,16 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-- type: document
-  path: content/site.json
-  label: Site Settings
+- type: heading
+  label: Content
 - type: directory
   path: content/blog
   label: Blog Posts
   create: documents
   match: "**/*"
+- type: document
+  path: content/site.json
+  label: Site Settings
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
