@@ -15,7 +15,7 @@ sections:
   path: content/site.json
   label: Site Settings
 upload_dir: content/uploads
-public_path: "/uploads"
+public_path: uploads
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:-:year:"
