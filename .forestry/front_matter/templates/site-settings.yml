@@ -37,17 +37,29 @@ fields:
   name: twitter
   label: Twitter Username
   description: The username to use for Twitter. <em>Only the username</em>.
+  config:
+    required: true
 - type: text
   name: instagram
   label: Instagram Username
   description: The username to use for Instagram. <em>Only for instagram</em>.
+  config:
+    required: true
 - type: text
   name: medium
   label: Medium Username
   description: The username to use for Medium. <em>Only the username</em>.
+  config:
+    required: true
 - type: text
   name: email
   label: Email
   description: The email to use for the 'say hi' section.
+- name: linkedin_username
+  type: text
+  config:
+    required: true
+  label: LinkedIn Username
+  description: Your LinkedIn username. Only the username, not the URL.
 pages:
 - content/site.json
