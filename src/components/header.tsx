@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import Twitter from "../../assets/twitter.svg"
 import Instagram from "../../assets/instagram.svg"
 import Medium from "../../assets/medium.svg"
+import LinkedIn from "../../assets/linkedin.svg"
 
 const query = graphql`
   {
@@ -15,6 +16,7 @@ const query = graphql`
         site_tagline
         twitter
         instagram
+        linkedin_username
         medium
         profile_pic {
           childImageSharp {
@@ -67,6 +69,12 @@ const Header = () => {
         <div className="flex flex-row space-x-2 mt-8">
           <Item icon={Twitter} href={`https://twitter.com/${results.twitter}`}>
             @{results.twitter}
+          </Item>
+          <Item
+            icon={LinkedIn}
+            href={`https://linkedin.com/in/${results.medium}`}
+          >
+            @{results.linkedin_username}
           </Item>
           <Item
             icon={Instagram}
