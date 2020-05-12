@@ -8,6 +8,7 @@ module.exports = {
     author: `@samwightt`,
   },
   plugins: [
+    "gatsby-transformer-json",
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -51,16 +52,15 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    "gatsby-transformer-json",
     // Uncomment the lines below to enable image support.
     // Make sure to add a directory for images.
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/content/uploads`,
+      },
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

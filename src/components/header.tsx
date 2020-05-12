@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const query = graphql`
   {
@@ -8,10 +9,19 @@ const query = graphql`
         name
         site_theme
         site_tagline
+        profile_pic {
+          childImageSharp {
+            fixed(width: 100, height: 100) {
+              ...GatsbyImageSharpFixed_withWebp_noBase64
+            }
+          }
+        }
       }
     }
   }
 `
+
+const qu = ``
 
 const Header = () => {
   const {
@@ -21,8 +31,17 @@ const Header = () => {
   return (
     <section className="py-32">
       <div className="container mx-auto max-w-md flex flex-col items-center">
+        <div
+          style={{ borderColor: results.site_theme }}
+          className="border-4 rounded-full flex flex-col items-center justify-center py-1 px-1"
+        >
+          <Img
+            className="rounded-full p-0 m-0"
+            fixed={results.profile_pic.childImageSharp.fixed}
+          />
+        </div>
         <h1
-          className="text-2xl uppercase font-extrabold font-open text-center"
+          className="mt-3 text-2xl uppercase font-extrabold font-open text-center"
           style={{ color: results.site_theme }}
         >
           {results.name}
