@@ -52,7 +52,7 @@ const Footer = () => {
 
   return (
     <footer className="py-4 border-t border-gray-200">
-      <div className="px-8 flex flex-row justify-between items-center">
+      <div className="px-8 md:px-16 flex flex-row justify-between items-center">
         <div className="flex flex-row items-center space-x-3">
           <Img
             className="rounded-full shadow-lg"
