@@ -14,11 +14,11 @@ sections:
 - type: document
   path: content/site.json
   label: Site Settings
-upload_dir: uploads
+upload_dir: content/uploads
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
-file_template: ":filename:"
+file_template: ":filename:-:year:"
 build:
   preview_output_directory: public
   install_dependencies_command: npm install
