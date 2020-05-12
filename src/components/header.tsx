@@ -40,10 +40,9 @@ const Item: React.FC<ItemType> = props => {
   return (
     <a
       href={props.href}
-      className="group border border-gray-400 rounded-full py-1 px-4 text-gray-700 text-xs font-open font-light hover:border-black hover:bg-black hover:text-white transition duration-300 flex flex-row items-center space-x-2"
+      className="group border border-gray-400 rounded-full py-3 px-3 text-gray-700 text-xs font-open font-light hover:border-black hover:bg-black hover:text-white transition duration-300 hover:shadow-lg"
     >
       <Icon height={15} width={15} className="fill-current" />
-      <div>{props.children}</div>
     </a>
   )
 }
@@ -60,31 +59,26 @@ const Header = () => {
           className="rounded-full shadow-xl"
           fixed={results.profile_pic.childImageSharp.fixed}
         />
-        <h1 className="mt-4 text-2xl text-gray-900 uppercase font-extrabold font-open text-center">
+        <h1 className="mt-8 text-2xl text-gray-900 uppercase font-extrabold font-open text-center">
           {results.name}
         </h1>
         <h2 className="mt-1 text-center leading-normal text-lg font-open font-light text-gray-600">
           {results.site_tagline}
         </h2>
-        <div className="flex flex-row space-x-2 mt-8">
-          <Item icon={Twitter} href={`https://twitter.com/${results.twitter}`}>
-            @{results.twitter}
-          </Item>
+        <div className="flex flex-row space-x-2 mt-4 flex-wrap justify-center align-center">
+          <Item
+            icon={Twitter}
+            href={`https://twitter.com/${results.twitter}`}
+          />
           <Item
             icon={LinkedIn}
             href={`https://linkedin.com/in/${results.medium}`}
-          >
-            @{results.linkedin_username}
-          </Item>
+          />
           <Item
             icon={Instagram}
             href={`https://instagram.com/${results.instagram}`}
-          >
-            @{results.instagram}
-          </Item>
-          <Item icon={Medium} href={`https://medium.com/@${results.medium}`}>
-            @{results.medium}
-          </Item>
+          />
+          <Item icon={Medium} href={`https://medium.com/@${results.medium}`} />
         </div>
       </div>
     </header>
