@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Header from "./header"
 
 import "./layout.css"
 
@@ -23,15 +24,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen">
-      <div className="max-w-2xl px-6">
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+    <div>
+      <Header />
+      <main>{children}</main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
     </div>
   )
 }
