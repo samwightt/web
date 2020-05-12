@@ -49,3 +49,5 @@ fields:
   name: email
   label: Email
   description: The email to use for the 'say hi' section.
+pages:
+- content/site.json
