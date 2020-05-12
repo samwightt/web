@@ -4,19 +4,48 @@ hide_body: true
 fields:
 - type: text
   name: name
-  label: name
+  label: Name
+  config:
+    required: true
+- name: profile_pic
+  type: file
+  config:
+    maxSize: 64
+  label: Profile Pic
+  description: The profile picture.
+- name: site_tagline
+  type: text
+  config:
+    required: true
+  label: Site Tagline
+  description: The tagline for the site. Appears in the profile area.
 - type: text
   name: description
-  label: description
+  label: Site Description
+  description: The site description. Appears in SEO.
+  config:
+    required: false
+- name: site_theme
+  type: color
+  label: Site Theme
+  config:
+    required: true
+    color_format: Hex
+  description: The site theme.
+  default: "#CB4848"
 - type: text
   name: twitter
-  label: twitter
+  label: Twitter Username
+  description: The username to use for Twitter. <em>Only the username</em>.
 - type: text
   name: instagram
-  label: instagram
+  label: Instagram Username
+  description: The username to use for Instagram. <em>Only for instagram</em>.
 - type: text
   name: medium
-  label: medium
+  label: Medium Username
+  description: The username to use for Medium. <em>Only the username</em>.
 - type: text
   name: email
-  label: email
+  label: Email
+  description: The email to use for the 'say hi' section.
