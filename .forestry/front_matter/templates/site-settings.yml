@@ -1,0 +1,22 @@
+---
+label: Site Settings
+hide_body: true
+fields:
+- type: text
+  name: name
+  label: name
+- type: text
+  name: description
+  label: description
+- type: text
+  name: twitter
+  label: twitter
+- type: text
+  name: instagram
+  label: instagram
+- type: text
+  name: medium
+  label: medium
+- type: text
+  name: email
+  label: email
