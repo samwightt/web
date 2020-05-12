@@ -1,3 +1,6 @@
+const fs = require("fs")
+const file = fs.readFileSync("./content/site.json").toJSON()
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Simple Tailwind`,
@@ -11,11 +14,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-simple-tailwind`,
-        short_name: `simple-tailwind`,
+        name: `${file.name}`,
+        short_name: `${file.name}`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `${file.site_theme}`,
+        theme_color: `${file.site_theme}`,
         display: `minimal-ui`,
         // Uncomment the line below if you'd like an icon.
         // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
@@ -23,7 +26,21 @@ module.exports = {
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-postcss`,
-
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ["open sans", "montserrat"],
+        display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/blog`,
+      },
+    },
+    `gatsby-transformer-remark`,
     // Uncomment the lines below to enable image support.
     // Make sure to add a directory for images.
     // {
