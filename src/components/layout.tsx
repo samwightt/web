@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
+import Footer from "./footer"
 
 import "./layout.css"
 
@@ -26,7 +27,10 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <main>{children}</main>
+      <main className="flex flex-col items-center py-32">
+        <section className="max-w-4xl">{children}</section>
+      </main>
+      <Footer />
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
