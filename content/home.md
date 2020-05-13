@@ -1,7 +1,7 @@
 ---
-
 ---
-# Hey there! 👋
+
+# Hey there 👋
 
 I'm Sam Wight. I'm a CS student at The University of Alabama and a React, Rails, and Typescript/Javascript developer by trade, but you'll find me coding in pretty much any language I can. I'm the president of **Blueprint at UA**, a student organization that donates software development consulting services to local nonprofits. Previously, I served as the Executive of Development for **CrimsonHacks**, the first MLH-sponsored hackathon in the state of Alabama. I also served as the Front-End Team Manager at CrimsonHacks my freshman year.
 

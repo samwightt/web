@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <Header />
       <main className="flex flex-col items-center py-32">
-        <section className="max-w-4xl">{children}</section>
+        <section className="max-w-2xl">{children}</section>
       </main>
       <Footer />
     </div>
