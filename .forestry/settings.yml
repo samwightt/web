@@ -4,12 +4,16 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-- type: heading
-  label: Content
 - type: directory
   path: content/blog
   label: Blog Posts
   create: documents
+  match: "**/*"
+- type: heading
+  label: Content
+- type: document
+  path: content/home.md
+  label: Home page
   match: "**/*"
 - type: document
   path: content/site.json
