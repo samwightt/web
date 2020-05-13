@@ -37,4 +37,5 @@ fields:
   default: now
 pages:
 - content/blog/atarios-amigaos-and-newtonos-why-good-operating-systems-fail.md
+- content/blog/how-we-win-the-next-election.md
 - content/blog/post-title.md
