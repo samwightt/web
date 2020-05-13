@@ -1,10 +1,13 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Item from "./socialicon"
 
 import Twitter from "../../assets/twitter.svg"
-import Medium from "../../assets/medium.svg"
 import Instagram from "../../assets/instagram.svg"
+import Medium from "../../assets/medium.svg"
+import LinkedIn from "../../assets/linkedin.svg"
+import GitHub from "../../assets/github.svg"
 
 const query = graphql`
   {
@@ -16,6 +19,8 @@ const query = graphql`
         twitter
         instagram
         medium
+        linkedin_username
+        github
         profile_pic {
           childImageSharp {
             fixed(width: 40, height: 40) {
@@ -27,23 +32,6 @@ const query = graphql`
     }
   }
 `
-
-interface ItemType {
-  href: string
-  icon: React.FC<any>
-}
-
-const Item: React.FC<ItemType> = props => {
-  const { icon: Icon } = props
-  return (
-    <a
-      href={props.href}
-      className="group border border-gray-400 rounded-full py-2 px-2 text-gray-600 text-xs font-open font-light hover:border-black hover:bg-black hover:text-white transition duration-300 flex flex-row items-center space-x-2"
-    >
-      <Icon height={15} width={15} className="fill-current" />
-    </a>
-  )
-}
 
 const Footer = () => {
   const {
@@ -64,14 +52,19 @@ const Footer = () => {
         </div>
         <div className="flex flex-row space-x-2">
           <Item
-            href={`https://twitter.com/${results.twitter}`}
             icon={Twitter}
+            href={`https://twitter.com/${results.twitter}`}
+          />
+          <Item icon={GitHub} href={`https://github.com/${results.twitter}`} />
+          <Item
+            icon={LinkedIn}
+            href={`https://linkedin.com/in/${results.medium}`}
           />
           <Item
-            href={`https://instagram.com/${results.twitter}`}
             icon={Instagram}
+            href={`https://instagram.com/${results.instagram}`}
           />
-          <Item href={`https://medium.com/@${results.twitter}`} icon={Medium} />
+          <Item icon={Medium} href={`https://medium.com/@${results.medium}`} />
         </div>
       </div>
     </footer>

@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`space-x-4 flex flex-row px-8 md:px-16 py-4 sticky top-0 left-0 right-0 z-10 bg-white justify-between transition duration-100 ${
+      className={`space-x-4 flex flex-row px-8 md:px-16 py-4 sticky top-0 left-0 right-0 z-10 bg-white justify-between items-center transition duration-100 ${
         scrollY > 5 && "shadow-sm border-b border-gray-200"
       }`}
     >
@@ -42,7 +42,7 @@ const Navbar = () => {
           className="rounded-full shadow-md transition duration-200 opacity-75 group-hover:opacity-100"
           fixed={results.profile_pic.childImageSharp.fixed}
         />
-        <h1 className="uppercase font-open font-extrabold text-gray-600 group-hover:text-black transition duration-200">
+        <h1 className="uppercase font-open font-extrabold text-sm text-gray-600 group-hover:text-black transition duration-200">
           {results.name}
         </h1>
       </Link>
