@@ -20,6 +20,30 @@ const query = graphql`
   }
 `
 
+interface ItemProps {
+  to: string
+}
+
+const isActive = ({ isCurrent }: { isCurrent: boolean }) => {
+  if (!isCurrent) {
+    return {
+      className:
+        "text-sm font-open py-2 px-3 rounded-md text-black hover:text-black transition duration-300 font-light hover:bg-gray-300",
+    }
+  } else {
+    return {
+      className:
+        "text-sm py-2 px-3 bg-black text-white rounded-md hover:bg-gray-800 hover:text-white transition duration-300",
+    }
+  }
+}
+
+const Item: React.FC<ItemProps> = props => (
+  <Link to={props.to} getProps={isActive}>
+    {props.children}
+  </Link>
+)
+
 interface NavbarProps {
   isHome: boolean
 }
@@ -50,21 +74,9 @@ const Navbar: React.FC<NavbarProps> = props => {
           {results.name}
         </h1>
       </Link>
-      <div className="flex flex-row space-x-4">
-        <Link
-          to="/"
-          className="font-open text-black hover:text-black transition duration-300 font-light hover:font-normal transition duration-300"
-          activeClassName="font-semibold hover:font-semibold"
-        >
-          Home
-        </Link>
-        <Link
-          to="/blog/"
-          className="font-open text-black hover:text-black transition duration-300 font-light hover:font-normal"
-          activeClassName="font-semibold"
-        >
-          Blog
-        </Link>
+      <div className="flex flex-row space-x-1 items-center">
+        <Item to="/">Home</Item>
+        <Item to="/blog/">Blog</Item>
       </div>
     </nav>
   )

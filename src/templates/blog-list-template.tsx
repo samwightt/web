@@ -22,7 +22,7 @@ export default props => {
     <Layout hasHeader title="Blog" subtitle="Thoughts, musings, and more.">
       {posts.map(({ node }) => {
         return (
-          <div key={node.fields.slug}>
+          <div key={node.fields.slug} className="my-12">
             <h1 className="font-extrabold font-lato text-4xl mb-4 leading-tight">
               <Link
                 className="hover:text-gray-700 transition duration-300"
@@ -36,7 +36,7 @@ export default props => {
             </Link>
             <span></span>
             <Link
-              className="inline-block my-4 py-2 px-3 font-open font-semibold border text-gray-700 border-gray-400 rounded-full hover:bg-black hover:border-black hover:text-white hover:shadow-lg transition duration-300"
+              className="text-sm inline-block my-2 py-2 px-3 font-open font-semibold border text-gray-700 border-gray-400 rounded-md hover:bg-black hover:border-black hover:text-white hover:shadow-lg transition duration-300"
               to={`/post${node.fields.slug}`}
             >
               View post
@@ -69,7 +69,7 @@ export const blogListQuery = graphql`
             title
             published
           }
-          excerptAst
+          excerptAst(pruneLength: 1000)
         }
       }
     }
