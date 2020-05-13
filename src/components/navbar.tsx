@@ -20,7 +20,11 @@ const query = graphql`
   }
 `
 
-const Navbar = () => {
+interface NavbarProps {
+  isHome: boolean
+}
+
+const Navbar: React.FC<NavbarProps> = props => {
   const scrollY = useScrollPosition(15)
   const {
     file: { childContentJson: results },
@@ -29,13 +33,13 @@ const Navbar = () => {
   return (
     <nav
       className={`space-x-4 flex flex-row px-8 md:px-16 py-4 sticky top-0 left-0 right-0 z-10 bg-white justify-between items-center transition duration-100 ${
-        scrollY > 5 && "shadow-sm border-b border-gray-200"
+        scrollY > 15 && "shadow-sm border-b border-gray-200"
       }`}
     >
       <Link
         to="/"
         className={`group flex flex-row items-center space-x-2 transition duration-100 ${
-          scrollY > 361 ? "opacity-100" : "opacity-0"
+          scrollY > 361 || !props.isHome ? "opacity-100" : "opacity-0"
         }`}
       >
         <Img
@@ -55,7 +59,7 @@ const Navbar = () => {
           Home
         </Link>
         <Link
-          to="/blog"
+          to="/blog/"
           className="font-open text-black hover:text-black transition duration-300 font-light hover:font-normal"
           activeClassName="font-semibold"
         >

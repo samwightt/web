@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import renderAst from "../lib/renderAst"
 
-import Layout from "../components/layout"
+import Layout from "../components/home-layout"
 import SEO from "../components/seo"
 
 const query = graphql`

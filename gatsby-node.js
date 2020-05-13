@@ -40,7 +40,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        filter: { fields: { collection: { eq: "posts" } } }
+        filter: {
+          frontmatter: { published: { eq: true } }
+          fields: { collection: { eq: "posts" } }
+        }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -58,7 +61,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild("Error while running posts GraphQL query.")
     return
+  } else if (result.data.allMarkdownRemark.edges.length === 0) {
+    createPage({
+      path: "/blog/",
+      component: path.resolve("./src/templates/blog-list-template.tsx"),
+      context: {
+        limit: 5,
+        skip: 0,
+      },
+    })
+    return
   }
+
+  const posts = result.data.allMarkdownRemark.edges
+  const postsPerPage = 5
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? "/blog" : `/blog/${i + 1}`,
+      component: path.resolve("./src/templates/blog-list-template.tsx"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
