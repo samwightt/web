@@ -28,15 +28,30 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-postcss`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: "gatsby-plugin-prefetch-google-fonts",
       options: {
         fonts: [
-          "Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900",
-          "Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800",
+          {
+            family: "Lato",
+            variants: ["400", "700", "900", "400i", "700i"],
+          },
+          {
+            family: "Open Sans",
+            variants: ["300", "800"],
+          },
         ],
-        display: "swap",
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       "Lato:ital,wght@0,400;0,700;0,900;1,400;1,700",
+    //       "Open Sans:wght@300;600;700;800",
+    //     ],
+    //     display: "swap",
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
