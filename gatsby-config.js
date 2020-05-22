@@ -3,14 +3,16 @@ const file = fs.readFileSync("./content/site.json").toJSON()
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Simple Tailwind`,
-    description: `This is a simple Gatsby starter that uses Tailwind, Typescript, and a few other QOL tools.`,
+    title: `Sam Wight`,
+    description: `Developer. Student at the University of Alabama. President of Blueprint at UA.`,
     author: `@samwightt`,
+    siteUrl: 'https://samw.dev/'
   },
   plugins: [
     "gatsby-transformer-json",
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -27,6 +29,7 @@ module.exports = {
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-prefetch-google-fonts",
       options: {

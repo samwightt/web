@@ -48,7 +48,7 @@ const Layout: React.FC<LayoutNoHeaderProps | LayoutProps> = props => {
         </HeaderContainer>
       )}
       <main className="flex flex-col items-center py-32">
-        <section className="max-w-2xl w-full">{children}</section>
+        <section className="max-w-2xl w-full p-6 md:p-0">{children}</section>
       </main>
       <Footer />
     </div>

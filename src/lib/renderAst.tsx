@@ -64,6 +64,12 @@ const listItem = props => (
   </li>
 )
 
+const link = props => (
+    <a {...props} className="border-b-2 border-gray-300 text-gray-600 hover:border-blue-600 hover:text-blue-800 transition duration-300">
+      {props.children}
+    </a>
+)
+
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
@@ -78,6 +84,7 @@ const renderAst = new rehypeReact({
     hr: divider,
     ul: unorderedList,
     li: listItem,
+    a: link
   },
 }).Compiler
 

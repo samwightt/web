@@ -2,13 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/regular-layout"
 import renderAST from "../lib/renderAst"
+import SEO from '../components/seo'
 
 export default function Template({ data }) {
   const { markdownRemark } = data
-  const { frontmatter, htmlAst } = markdownRemark
+  const { frontmatter, htmlAst, excerpt } = markdownRemark
 
   return (
     <Layout hasHeader={false}>
+      <SEO title={frontmatter.title} description={excerpt}/>
       <div>
         <h1 className="font-extrabold font-lato text-4xl mb-4 leading-tight">
           {frontmatter.title}
@@ -28,6 +30,7 @@ export const pageQuery = graphql`
         date
         title
       }
+      excerpt(pruneLength: 500)
     }
   }
 `
