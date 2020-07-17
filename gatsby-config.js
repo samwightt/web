@@ -6,7 +6,7 @@ module.exports = {
     title: `Sam Wight`,
     description: `Developer. Student at the University of Alabama. President of Blueprint at UA.`,
     author: `@samwightt`,
-    siteUrl: 'https://samw.dev/'
+    siteUrl: "https://samw.dev/",
   },
   plugins: [
     "gatsby-transformer-json",
@@ -30,31 +30,6 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-prefetch-google-fonts",
-      options: {
-        fonts: [
-          {
-            family: "Lato",
-            variants: ["400", "700", "900", "400i", "700i"],
-          },
-          {
-            family: "Open Sans",
-            variants: ["300", "800"],
-          },
-        ],
-      },
-    },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       "Lato:ital,wght@0,400;0,700;0,900;1,400;1,700",
-    //       "Open Sans:wght@300;600;700;800",
-    //     ],
-    //     display: "swap",
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

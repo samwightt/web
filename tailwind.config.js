@@ -21,7 +21,7 @@ module.exports = {
       },
       fontFamily: {
         lato: [
-          "Lato",
+          "Inter",
           "system-ui",
           "BlinkMacSystemFont",
           "-apple-system",
@@ -36,7 +36,7 @@ module.exports = {
           "sans-serif",
         ],
         open: [
-          "Open Sans",
+          "Inter",
           "system-ui",
           "BlinkMacSystemFont",
           "-apple-system",
